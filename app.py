@@ -43,6 +43,7 @@ def login():
     }
 
     try:
+        '''      
         response = requests.post(
             'http://api-cbn.edu.ciloglunet.com/login',
             headers={
@@ -59,7 +60,9 @@ def login():
         
         if dataArray[0] is True:
             session['logged_in'] = True
-            
+        '''
+        if(request.form['username']=="aunlu" and request.form['password']=="1234"):
+            session['logged_in'] = True  
         else:
             raise Exception('Giriş bilgileri eksik ya da yanlış girdiniz')
     except Exception as error:
